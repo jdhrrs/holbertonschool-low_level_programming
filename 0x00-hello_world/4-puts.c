@@ -1,8 +1,9 @@
 #include <stdio.h>
-/*
- * main - Prints string
- * Description: Prints "\"Programming is like building a multilingual puzzle"
- * Return: 0
+
+/**
+ * main - puts line to stdout
+ * Description: uses puts to output fixed message
+ * Return: void
  */
 int main(void)
 {
