@@ -42,4 +42,4 @@ void rev_string(char *s)
 	{
 		*(s + k) = s_rev[k];
 	}
-}
+}	
