@@ -1,16 +1,15 @@
 #include "holberton.h"
-#include <stdio.h>
 
 /**
- * main - check the code for Holberton School students.
- *
- * Return: Always 0.
+ * _strlen_recursion - prints a string, followed by a new line.
+ * @s: string
+ * Return: int
  */
-int main(void)
+int _strlen_recursion(char *s)
 {
-  int n;
-
-  n = _strlen_recursion("Corbin Coleman");
-  printf("%d\n", n);
-  return (0);
+	if (*s == '\0')
+	{
+		return (0);
+	}
+	return (_strlen_recursion(s + 1) + 1);
 }
