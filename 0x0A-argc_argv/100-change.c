@@ -1,58 +1,35 @@
 #include <stdio.h>
 #include <stdlib.h>
+
 /**
- * change - Count for number of coins
- * @n: number passed by user
- * Return: Count of coins
+ * main - prints lowest # of coins to make change with
+ * @argc: # of arguments
+ * @argv: array of arguments
+ * Return: 1 if error or 0 if success
  */
-int change(int n)
-{
-int s[] = {25, 10, 5, 2, 1};
-int count, i;
-
-i = 0;
-count = 0;
-
-while (n > 0)
-{
-if (n >= s[i])
-{
-n = n - s[i];
-count++;
-}
-else
-{
-i++;
-{
-}
-return (count);
-}
-/**
- * main - Function
- * @argc: argument count
- * @argv: argument vector
- * Return: 0 if the program is correct
- * 1 if there's an error
- */
-
 int main(int argc, char *argv[])
 {
-int n;
+int cents = atoi(argv[argc - 1]), quarter, dime;
+int nickel, deuce, penny, total = 0;
 
 if (argc != 2)
 {
 printf("Error\n");
 return (1);
 }
-
-n = atoi(argv[1]);
-
-if (n < 0)
+else if (cents > 0)
+{
+quarter = cents / 25;
+dime = cents % 25 / 10;
+nickel = cents % 25 % 10 / 5;
+deuce = cents % 25 % 10 % 5 / 2;
+penny = cents % 25 % 10 % 5 % 2 / 1;
+total = quarter + dime + nickel + deuce + penny;
+printf("%d\n", total);
+}
+else
 {
 printf("0\n");
+}
 return (0);
 }
-printf("%d\n", change(n));
-return (0);
-}
-
